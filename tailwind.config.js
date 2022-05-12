@@ -1,12 +1,17 @@
 module.exports = {
   content: [
-	'./pages/**/*.{html,js}',
-    './components/**/*.{html,js}',
-	'./resources/views/layouts/app.blade.php'
+	//'./pages/**/*.{html,js}',
+    //'./components/**/*.{html,js}',
+	'./resources/views/layouts/app.blade.php',
+	'./resources/views/templates/index.blade.php',
+	'./resources/views/auth/register.blade.php',
+	'./resources/views/auth/login.blade.php',
+	'./resources/views/auth/logout.blade.php',
+	//'./resources/views/auth/register.blade.php'
   ],
   presets: [],
   darkMode: 'class',
-  // or 'media'
+  // or 'class'
   theme: {
     screens: {
       sm: '640px',
