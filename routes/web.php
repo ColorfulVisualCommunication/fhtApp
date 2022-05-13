@@ -5,6 +5,7 @@ use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\LogoutController;
 use App\Http\Controllers\auth\DashboardController;
+use App\Http\Controllers\auth\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,10 +20,12 @@ Route::get('/auth.register',[RegisterController::class, 'reg'])->name('register'
 Route::post('/auth.register',[RegisterController::class, 'store']);
 
 Route::get('/auth.login',[LoginController::class, 'login'])->name('login');
-//Route::post('/auth.login',[LoginController::class, 'store']);
+Route::post('/auth.login',[LoginController::class, 'store']);
 
-Route::get('/auth.logout',[LogoutController::class, 'logout'])->name('logout');
+Route::post('/auth.logout',[LogoutController::class, 'logout'])->name('logout');
+
 Route::get('/auth.dashboard',[DashboardController::class, 'dashboard'])->name('dashboard');
+Route::get('/templates.index',[HomeController::class, 'index'])->name('index');
 
 Route::get('/', function () {
     return view('templates.index');

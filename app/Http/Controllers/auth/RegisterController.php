@@ -6,9 +6,16 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 Use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Auth;
+use AuthenticatesUsers;
 
 class RegisterController extends Controller
 {
+	public function __construct()
+	{
+		$this->middleware(['auth']);
+	}	
+	
     public function reg()
 	{
 		return view('auth.register');
@@ -20,7 +27,6 @@ class RegisterController extends Controller
 	public function store(Request $request)
 	{
 		//validation
-		//$uri = $request->path();
 		 $validated = $request->validate([
         'name' => 'required| max:255',
         'username' => 'required| max:255', 
@@ -37,6 +43,8 @@ class RegisterController extends Controller
         ]);
 		
 		//sign in user
+       Auth::attempt($request->only('email','password'));
+
 		//redirect
 		return redirect()->route('dashboard');
 	}

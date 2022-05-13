@@ -17,7 +17,7 @@
 	<label class="block text-gray-700 text-sm font-bold mb-2" for="username">
 	Username
 	</label>
-	<input value="{{old('username')}}" class="@error('name') border border-red-500 @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="username" id="username" type="text" placeholder="Username" >
+	<input value="{{old('username')}}" class="@error('username') border border-red-500 @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="username" id="username" type="text" placeholder="Username" >
 	</div>
 	@error('username')<div class="text-red-500 text-sm mb-4">{{$message}}</div>@enderror
 	
@@ -25,7 +25,7 @@
 	<label class="block  text-gray-500 text-sm font-bold mt-4 mb-2" for="email">
 	Email
 	</label>
-	<input class="@error('name') border border-red-500 @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="email" value="{{old('email')}}" id="email" type="text" placeholder="example@abc.com" >
+	<input class="@error('email') border border-red-500 @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="email" value="{{old('email')}}" id="email" type="text" placeholder="example@abc.com" >
 	</div>
 	@error('email')<div class="text-red-500 text-sm mb-4">{{$message}}</div>@enderror
 	
@@ -33,7 +33,7 @@
 	<label class="block text-gray-500 text-sm font-bold mt-4 mb-2" for="confirmPassword">
 	Password
 	</label>
-	<input class="@error('name') border border-red-500 @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" min="8" name="password" value="" id="password" type="password" placeholder="**********" >
+	<input class="@error('password') border border-red-500 @enderror shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" min="8" name="password" value="" id="password" type="password" placeholder="**********" >
 	</div>
 	@error('password')<div class="text-red-500 text-sm mb-4">{{$message}}</div>@enderror
 	
